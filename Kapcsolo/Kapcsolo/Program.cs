@@ -25,7 +25,7 @@ switch(honap)
     case "December" or "Január" or "Február": Console.WriteLine("Jelenleg 1/4 van.");break;
     case "Március" or "Április" or "Május": Console.WriteLine("Jelenleg 2/4 van.");break;
     case "Június" or "Július" or "Augusztus": Console.WriteLine("Jelenleg 3/4 van.");break;
-    case "Szeptember" or "Október" or "December": Console.WriteLine("Jelenleg 4/4 van.");break;
+    case "Szeptember" or "Október" or "November": Console.WriteLine("Jelenleg 4/4 van.");break;
     default: Console.WriteLine("Szerintem valamit elrontottál, vagy csak nem lett jó a nagybetű.");break;
 }
 
@@ -52,18 +52,108 @@ switch(orak)
 {
     case 1 or 2 or 3 or 4 or 5 or 6: Console.WriteLine("Egy kicsit kevés nem gondolod? Pörög a LoL ha nem tévedek...");break;
     case 7 or 8 or 9: Console.WriteLine("Átlagos.");break;
-    case 
+    case 10 or 11 or 12: Console.WriteLine("Kicsit sok az, nem-e?");break;
+    case 13 or 14 or 15 or 16 or 17 or 18 or 19 or 20 or 21 or 22 or 23 or 24: Console.WriteLine("Hát az inkább már túl sok...");break;
+    default: Console.WriteLine("Ezt nem tudom értelmezni.");break;
 }
 
 //5. Feladat:
 
+Console.Write("Add meg a szeptemberi nap sorszámát (1-30): ");
+int nap = int.Parse(Console.ReadLine()!);
+switch(nap % 7)
+{
+    case 0: Console.WriteLine("Ez a nap Péntekre esik."); break;
+    case 1: Console.WriteLine("Ez a nap Szombatra esik."); break;
+    case 2: Console.WriteLine("Ez a nap Vasárnapra esik."); break;
+    case 3: Console.WriteLine("Ez a nap Hétfőre esik."); break;
+    case 4: Console.WriteLine("Ez a nap Keddre esik."); break;
+    case 5: Console.WriteLine("Ez a nap Szerdára esik."); break;
+    case 6: Console.WriteLine("Ez a nap Csütörtökre esik."); break;
+}
+
+Console.WriteLine("Az óráid ezen a napon: Informatika, Matematika, Nyelvtan.");
+
 //6. Feladat:
+
+Console.Write("Add meg az osztály jelet: ");
+string osztaly = Console.ReadLine()!.ToLower();
+
+switch(osztaly)
+{
+    case "a": Console.WriteLine("Az osztályfőnök: Kovács Péter, Terem: 101"); break;
+    case "b": Console.WriteLine("Az osztályfőnök: Nagy Anna, Terem: 102"); break;
+    case "c": Console.WriteLine("Az osztályfőnök: Tóth Sándor, Terem: 103"); break;
+    default: Console.WriteLine("Hibás osztályjel, nincs ilyen osztály!"); break;
+}
 
 //7. Feladat:
 
+Console.Write("Adj meg egy egész számot: ");
+int szam1 = int.Parse(Console.ReadLine()!);
+Console.Write("Adj meg egy másik egész számot: ");
+int szam2 = int.Parse(Console.ReadLine()!);
+Console.Write("Adj meg egy műveleti jelet(+, -, x, :) ");
+string muvelet = Console.ReadLine()!;
+
+switch(muvelet)
+{
+    case "+": Console.WriteLine(szam1 + szam2);break;
+    case "-": Console.WriteLine(szam1 - szam2);break;
+    case "*": Console.WriteLine(szam1 * szam2);break;
+    case "/": Console.WriteLine(szam1 / szam2);break;
+    default: Console.WriteLine("Ezt nem tudom értelmezni.");break;
+}
+
+
 //8. Feladat:
 
+Console.Write("Adj meg egy összeget: ");
+int osszeg = int.Parse(Console.ReadLine()!);
+int kerekitett = osszeg % 10;
+
+switch(kerekitett)
+{
+    case 1:
+    case 2: osszeg -= kerekitett; break;
+    case 3:
+    case 4: osszeg += (5 - kerekitett); break;
+    case 6:
+    case 7: osszeg -= (kerekitett - 5); break;
+    case 8:
+    case 9: osszeg += (10 - kerekitett); break;
+}
+
+Console.WriteLine("Készpénzben ennyit kell fizetned: " + osszeg);
+
 //9. Feladat:
+
+Console.Write("Adj meg egy évszámot: ");
+int ev = int.Parse(Console.ReadLine()!);
+Console.Write("Adj meg egy hónap nevét: ");
+//string honap = Console.ReadLine()!.ToLower(); //TODO!: fix hónap string malfunction
+
+bool szokoev = (ev % 4 == 0 && ev % 100 != 0) || (ev % 400 == 0); //TODO!: nem megy
+
+switch(honap)
+{
+    case "január":
+    case "március":
+    case "május":
+    case "július":
+    case "augusztus":
+    case "október":
+    case "december": Console.WriteLine("31 napos."); break;
+    case "április":
+    case "június":
+    case "szeptember":
+    case "november": Console.WriteLine("30 napos."); break;
+    case "február": 
+        if (szokoev) Console.WriteLine("29 napos.");
+        else Console.WriteLine("28 napos.");
+        break;
+    default: Console.WriteLine("Hibás hónapnév!"); break;
+}
 
 #endregion
 
@@ -71,12 +161,50 @@ switch(orak)
 
 //10. Feladat:
 
+Console.Write("Add meg a vásárlás végösszegét: ");
+int osszegVasarlas = int.Parse(Console.ReadLine()!);
+int szelvenyek = osszegVasarlas / 500;
+
+switch(osszegVasarlas)
+{
+    case >= 10000: Console.WriteLine("Ajándék: Zsákbamacska (pohárkrém, kandírozott gyümölcs, vagy marcipán figura)."); break;
+    case >= 6000: Console.WriteLine("Ajándék: Tábla csoki."); break;
+    case >= 3000: Console.WriteLine("Ajándék: Zacskó gumicukor."); break;
+    default: Console.WriteLine("Nincs ajándék."); break;
+}
+
+Console.WriteLine($"Nyereményszelvények száma: {szelvenyek}");
+
 //11. Feladat:
+
+Console.Write("Add meg az időt (óra): ");
+int ora = int.Parse(Console.ReadLine()!);
+Console.Write("Add meg az időt (perc): ");
+int perc = int.Parse(Console.ReadLine()!); //TODO!: perc változó-t megjavítanni.
+
+if (ora >= 6 && ora < 21)
+{
+    Console.Write("Elég fény szűrődik be az ablakokon? (igen/nem): ");
+    string elegFeny = Console.ReadLine()!.ToLower();
+
+    switch(elegFeny)
+    {
+        case "igen": Console.WriteLine("Világítás: Nincs szükség világításra."); break;
+        case "nem": Console.WriteLine("Világítás: Nappali fény."); break;
+        default: Console.WriteLine("Hibás válasz."); break;
+    }
+}
+else
+{
+    Console.WriteLine("Világítás: Éjszakai fény.");
+}
 
 #endregion
 
 #region Asztali alkalmazások fejlesztése
 
 //12. Feladat:
+
+//TODO!: Egyszer meglett írva, csak ugye persze, hogy nem ment...
 
 #endregion

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Solti Csongor Peter 11D\\Cs\\feladatok\\kapcsolo\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj": {}
+    "E:\\REPOS\\cs-switch\\NJSZKI_DB_Switch\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj": {}
   },
   "projects": {
-    "D:\\Solti Csongor Peter 11D\\Cs\\feladatok\\kapcsolo\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj": {
+    "E:\\REPOS\\cs-switch\\NJSZKI_DB_Switch\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Solti Csongor Peter 11D\\Cs\\feladatok\\kapcsolo\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj",
+        "projectUniqueName": "E:\\REPOS\\cs-switch\\NJSZKI_DB_Switch\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj",
         "projectName": "Kapcsolo",
-        "projectPath": "D:\\Solti Csongor Peter 11D\\Cs\\feladatok\\kapcsolo\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj",
-        "packagesPath": "C:\\Users\\Suli\\.nuget\\packages\\",
-        "outputPath": "D:\\Solti Csongor Peter 11D\\Cs\\feladatok\\kapcsolo\\Kapcsolo\\Kapcsolo\\obj\\",
+        "projectPath": "E:\\REPOS\\cs-switch\\NJSZKI_DB_Switch\\Kapcsolo\\Kapcsolo\\Kapcsolo.csproj",
+        "packagesPath": "C:\\Users\\solti_aks20xi\\.nuget\\packages\\",
+        "outputPath": "E:\\REPOS\\cs-switch\\NJSZKI_DB_Switch\\Kapcsolo\\Kapcsolo\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Suli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\solti_aks20xi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
