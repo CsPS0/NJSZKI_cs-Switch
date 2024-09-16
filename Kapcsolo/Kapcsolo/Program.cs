@@ -180,24 +180,34 @@ Console.WriteLine($"Nyereményszelvények száma: {szelvenyek}");
 Console.Write("Add meg az időt (óra): ");
 int ora = int.Parse(Console.ReadLine()!);
 Console.Write("Add meg az időt (perc): ");
-int perc = int.Parse(Console.ReadLine()!); //TODO!: perc változó-t megjavítanni.
+int perc = int.Parse(Console.ReadLine()!);
+
+string fenyVisszajelzes = "Hibás válasz.";
 
 if (ora >= 6 && ora < 21)
 {
     Console.Write("Elég fény szűrődik be az ablakokon? (igen/nem): ");
     string elegFeny = Console.ReadLine()!.ToLower();
 
-    switch(elegFeny)
+    switch (elegFeny)
     {
-        case "igen": Console.WriteLine("Világítás: Nincs szükség világításra."); break;
-        case "nem": Console.WriteLine("Világítás: Nappali fény."); break;
-        default: Console.WriteLine("Hibás válasz."); break;
+        case "igen":
+            fenyVisszajelzes = "Világítás: Nincs szükség világításra.";
+            break;
+        case "nem":
+            fenyVisszajelzes = "Világítás: Nappali fény.";
+            break;
+        default:
+            fenyVisszajelzes = "Hibás válasz.";
+            break;
     }
 }
 else
 {
-    Console.WriteLine("Világítás: Éjszakai fény.");
+    fenyVisszajelzes = "Világítás: Éjszakai fény.";
 }
+
+Console.WriteLine(fenyVisszajelzes);
 
 #endregion
 
@@ -205,6 +215,81 @@ else
 
 //12. Feladat:
 
-//TODO!: Egyszer meglett írva, csak ugye persze, hogy nem ment...
+Random random = new Random();
+
+int elsoSzamjegy = random.Next(1, 10);
+int masodikSzamjegy = random.Next(0, 10);
+int harmadikSzamjegy = random.Next(0, 10);
+int negyedikSzamjegy = random.Next(0, 10);
+
+Console.WriteLine($"Generált kód: {elsoSzamjegy}{masodikSzamjegy}{harmadikSzamjegy}{negyedikSzamjegy}");
+
+switch (elsoSzamjegy)
+{
+    case > 4:
+        Console.WriteLine("Beléphetsz az 1. helyiségbe.");
+        break;
+}
+
+switch (masodikSzamjegy)
+{
+    case > 4:
+        Console.WriteLine("Beléphetsz a 2. helyiségbe.");
+        break;
+}
+
+switch (harmadikSzamjegy)
+{
+    case > 4:
+        Console.WriteLine("Beléphetsz a 3. helyiségbe.");
+        break;
+}
+
+switch (negyedikSzamjegy)
+{
+    case > 4:
+        Console.WriteLine("Beléphetsz a 4. helyiségbe.");
+        break;
+}
+
+bool elsoEsHarmadikParos = (elsoSzamjegy % 2 == 0) && (harmadikSzamjegy % 2 == 0);
+switch (elsoEsHarmadikParos)
+{
+    case true:
+        Console.WriteLine("Beléphetsz az 5. helyiségbe.");
+        break;
+}
+
+bool masodikEsNegyedikParos = (masodikSzamjegy % 2 == 0) && (negyedikSzamjegy % 2 == 0);
+switch (masodikEsNegyedikParos)
+{
+    case true:
+        Console.WriteLine("Beléphetsz a 6. helyiségbe.");
+        break;
+}
+
+bool mindenParosEsNagyobbMintNegy = (elsoSzamjegy % 2 == 0 && elsoSzamjegy > 4) &&
+                                        (masodikSzamjegy % 2 == 0 && masodikSzamjegy > 4) &&
+                                        (harmadikSzamjegy % 2 == 0 && harmadikSzamjegy > 4) &&
+                                        (negyedikSzamjegy % 2 == 0 && negyedikSzamjegy > 4);
+bool vanKettoKulonbozoSzamjegy = (elsoSzamjegy != masodikSzamjegy) || 
+                                    (elsoSzamjegy != harmadikSzamjegy) || 
+                                    (elsoSzamjegy != negyedikSzamjegy) || 
+                                    (masodikSzamjegy != harmadikSzamjegy) || 
+                                    (masodikSzamjegy != negyedikSzamjegy) || 
+                                    (harmadikSzamjegy != negyedikSzamjegy);
+
+switch (mindenParosEsNagyobbMintNegy && vanKettoKulonbozoSzamjegy)
+{
+    case true:
+        Console.WriteLine("Beléphetsz a 7. helyiségbe.");
+        break;
+}
+
+if (!(elsoSzamjegy > 4 || masodikSzamjegy > 4 || harmadikSzamjegy > 4 || negyedikSzamjegy > 4 ||
+        elsoEsHarmadikParos || masodikEsNegyedikParos || (mindenParosEsNagyobbMintNegy && vanKettoKulonbozoSzamjegy)))
+{
+    Console.WriteLine("A kártya érvénytelen, nem léphetsz be egy helyiségbe sem.");
+}
 
 #endregion
